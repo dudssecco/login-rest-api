@@ -1,45 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+   <html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/login.css">
-    <title>Modern Login Page | AsmrProg</title>
-</head>
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-in">
-            <form action="/auth/login" method="POST" >
-                <h1>Login</h1>
-                
-                <span>Utilize seu email e sua senha.</span>
-                <input type="email" name="email" id="email" placeholder="Email">
-                <input type="password" name="password" id="password" placeholder="Senha">
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="/css/login.css">
 
-                <% if (error_msg.length > 0) { %>
-                    <div class="alert-danger">
-                      <%= error_msg %>
-                    </div>
-                <% } %>
+      <title>Login Page</title>
+   </head>
+   <body>
+      <div class="login">
 
-                <a href="#">Esqueceu sua senha?</a>
-                <button>Entrar</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-right">
-                    <h1>Bem-vindo(a) <br> de volta!</h1>
-                    <p>Faça seu login e aproveite inúmeros cupons de desconto!</p>
+         <form action="/auth/login" method="POST" class="login__form">
+            <h1 class="login__title">Login</h1>
+
+            <% if (error_msg.length > 0) { %>
+                <div class="alert-danger">
+                  <%= error_msg %>
                 </div>
+            <% } %>
+        
+            <% if (succes_msg.length > 0) { %>
+                <div class="alert-succes">
+                  <%= succes_msg %>
+                </div>
+            <% } %>
+
+            <div class="login__content">
+               <div class="login__box">
+                  <i class="ri-user-3-line login__icon"></i>
+
+                  <div class="login__box-input">
+                     <input type="email" class="login__input" id="email" name="email" required placeholder=" " >
+                     <label for="login-email" class="login__label">Email</label>
+                  </div>
+               </div>
+
+               <div class="login__box">
+                  <i class="ri-lock-2-line login__icon"></i>
+
+                  <div class="login__box-input">
+                     <input type="password" class="login__input" id="password" name="password" required placeholder=" ">
+                     <label for="login-pass" class="login__label">Senha</label>
+                     <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
 
-    <script src="/js/login.js"></script>
-</body>
+            <div class="login__check">
+               <a href="#" class="login__forgot">Esqueceu sua Senha?</a>
+            </div>
 
+            <button type="submit" class="login__button">Login</button>
+
+            <p class="login__register">
+               Ainda não possui uma conta? <a href="http://localhost:3000/register">Cadastre-se</a>
+            </p>
+         </form>
+      </div>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="/js/login.js"></script>
+   </body>
 </html>

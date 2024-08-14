@@ -61,7 +61,8 @@ exports.auth = async (req, res) => {
         const token = jwt.sign({
             id: user._id
         }, secret)
-        res.status(200).json({msg: "Autenticação efetuada com sucesso!", token})
+        // res.status(200).json({msg: "Autenticação efetuada com sucesso!", token})
+        res.render('dashboard.html')
     } catch(err){
         console.log(erro)
         errors.push('Aconteceu um erro em nosso servidor, por favor tente novamente mais tarde!')
