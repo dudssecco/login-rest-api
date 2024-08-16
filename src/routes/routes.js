@@ -20,6 +20,6 @@ route.get('/register', RegisterController.index)
 route.post('/auth/register', RegisterController.auth)
 
 route.get('/dashboard', AuthToken, DashboardController.index)
-route.post('/auth/dashboard', AuthToken, DashboardController.auth)
+route.post('/auth/dashboard', AuthToken, DashboardController.add)
 // route.put('/dashboard', AuthToken, DashboardController.att)
 // route.delete('/dashboard', AuthToken, DashboardController.delete)

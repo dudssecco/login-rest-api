@@ -56,7 +56,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 400px;
+    gap: 300px;
 }
 .left{
     display: flex;

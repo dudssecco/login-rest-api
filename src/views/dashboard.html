@@ -15,6 +15,18 @@
         </div>
     </header>
 
+    <% if (error_msg.length > 0) { %>
+        <div class="alert-danger">
+          <%= error_msg %>
+        </div>
+    <% } %>
+
+    <% if (succes_msg.length > 0) { %>
+        <div class="alert-succes">
+          <%= succes_msg %>
+        </div>
+    <% } %>
+
     <div class="add__container">
         <div class="add__item">
             <nav>
