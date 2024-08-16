@@ -10,13 +10,28 @@
 <body>
     <header>
         <div>
-            <span>Add</span>
+            <span class="add__btn">Add</span>
             <span>Exit</span>
         </div>
     </header>
 
-    <div class="container">
-        
+    <div class="add__container">
+        <div class="add__item">
+            <nav>
+                <h1>Cadastre sua Receita</h1>
+                <i class="ri-close-line close_btn"></i>
+            </nav>
+
+            <form action="/auth/dashboard" method="POST">
+                <label for="title">Título:</label>
+                <input type="text" name="title" id="title"><br>
+                <label for="describe">Descricão:</label>
+                <input type="text" name="description" id="description"><br>
+                <label for="ingredients">Ingredients:</label>
+                <input type="text" name="ingredients" id="ingredients"><br>
+                <input type="submit" class="submit" value="Adicionar">
+            </form>
+        </div>
     </div>
 
     <script src="/js/dashboard.js"></script>

@@ -4,7 +4,10 @@ const route =  express.Router();
 
 const IndexController = require('../controllers/IndexController')
 const LoginController = require('../controllers/LoginController')
-const RegisterController = require('../controllers/RegisterController.js')
+const RegisterController = require('../controllers/RegisterController')
+const DashboardController = require('../controllers/DashboardController')
+
+const AuthToken = require('../middlewares/AuthToken.js')
 
 module.exports = route
 
@@ -15,3 +18,8 @@ route.post('/auth/login', LoginController.auth)
 
 route.get('/register', RegisterController.index)
 route.post('/auth/register', RegisterController.auth)
+
+route.get('/dashboard', AuthToken, DashboardController.index)
+route.post('/auth/dashboard', AuthToken, DashboardController.auth)
+// route.put('/dashboard', AuthToken, DashboardController.att)
+// route.delete('/dashboard', AuthToken, DashboardController.delete)

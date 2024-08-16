@@ -59,12 +59,14 @@ exports.auth = async (req, res) => {
     try{
         const secret = process.env.SECRET;
         const token = jwt.sign({
-            id: user._id
-        }, secret)
-        // res.status(200).json({msg: "Autenticação efetuada com sucesso!", token})
-        res.render('dashboard.html')
+            userId: user._id
+        }, secret, { expiresIn: '1h' })
+        // res.status(200).json({ token })
+        console.log(token)
+        const cookie = res.cookie('token', token, { httpOnly: true, maxAge: 3600000 })
+        res.redirect('/dashboard')
     } catch(err){
-        console.log(erro)
+        console.log(err)
         errors.push('Aconteceu um erro em nosso servidor, por favor tente novamente mais tarde!')
         req.flash('error_msg', errors)
         req.session.save(() => {

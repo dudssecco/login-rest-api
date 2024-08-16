@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const session = require('express-session');
 const flash = require('connect-flash');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -20,6 +21,7 @@ const secret = process.env.SECRET;
 app.use(express.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cookieParser())
 
 // Config View Engine
 app.engine('html', require('ejs').renderFile);
