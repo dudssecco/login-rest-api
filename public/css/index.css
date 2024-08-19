@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: Ablation;
+  src: url(../fonts/Ablation.otf) format('opentype');
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url(../fonts/Gotham-Light.otf) format('opentype');
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background:url(../images//wallpaper.svg);
+  background-size: cover; /* Faz a imagem cobrir todo o fundo */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome{
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  margin-bottom: 200px;
+}
+
+.welcome h1{
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  font-family: 'Ablation', sans-serif;
+}
+
+.welcome p{
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 50px;
+  font-family: 'Gotham', sans-serif;
+  font-size: 1.15rem;
+}
+
+.box__buttons{
+  display: flex;
+  gap: 10px;
+}
+
+a{
+  font-family: 'Gotham', sans-serif;
+  font-size: 1.15rem;
+  width: 160px;
+  height: 45px;
+  backdrop-filter: blur(20px) !important;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: .5s ease-in-out;
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -ms-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+a:hover{
+  color: black;
+  background-color: white;
+}

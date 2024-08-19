@@ -1,4 +1,4 @@
 exports.index = async (req, res) => {
-    return res.render('login.html')
+    return res.render('index.html')
 }
 

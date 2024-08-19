@@ -6,13 +6,22 @@ exports.index = async (req, res) => {
 }
 
 exports.auth = async (req, res) => {
-    const {name, email, password, confirmpassword} = req.body;
+    const {name, lastname, email, password, confirmpassword} = req.body;
     const errors = [];
     const succes = []
 
     // Validations
     if(!name){
         errors.push('O campo name é obrigatório!')
+        req.flash('error_msg', errors)
+        req.session.save(() => {
+           return res.redirect('/register') 
+        })
+        return 
+        // return res.status(422).json({msg: "O campo name é obrigatório!"})
+    }
+    if(!lastname){
+        errors.push('O campo lastname é obrigatório!')
         req.flash('error_msg', errors)
         req.session.save(() => {
            return res.redirect('/register') 
