@@ -88,6 +88,7 @@ exports.auth = async (req, res) => {
     // Create User
     const user = new User({
         name: name,
+        lastname: lastname,
         email: email,
         password: passwordHash
     })

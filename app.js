@@ -49,7 +49,6 @@ app.use(routes);
 mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@studycluster.ksd9dvc.mongodb.net/?retryWrites=true&w=majority&appName=StudyCluster`)
 .then(() => {
     app.listen(3000)
-    console.log("Server is running on port 3000")
-    
+    console.log("Server is running on port 3000") 
 })
 .catch((err) => console.log(err))

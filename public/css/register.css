@@ -26,13 +26,25 @@ body{
 }
 
 .alert{
+  margin-bottom: 15px;
+}
+
+.alert .error{
   color: rgb(223, 110, 110);
   font-size: 1rem;
   font-family: 'Figtree';
   font-weight: normal;
   height: 20px;
-  margin-bottom: 15px;
 }
+
+.alert .success{
+  color: rgb(48, 150, 65);
+  font-size: 1rem;
+  font-family: 'Figtree';
+  font-weight: normal;
+  height: 20px;
+}
+
 
 .sign__up{
   max-width: 900px;
