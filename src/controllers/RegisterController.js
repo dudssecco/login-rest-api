@@ -7,7 +7,7 @@ exports.index = async (req, res) => {
 
 exports.auth = async (req, res) => {
     const {name, lastname, email, password, confirmpassword} = req.body;
-    const errors = [];
+    const errors = []
     const succes = []
 
     // Validations

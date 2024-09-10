@@ -44,6 +44,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Routes
 app.use(routes);
+app.use((req, res, next) => {
+    res.status(404).render('error404.html')
+})
 
 // Connection Database
 mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@studycluster.ksd9dvc.mongodb.net/?retryWrites=true&w=majority&appName=StudyCluster`)

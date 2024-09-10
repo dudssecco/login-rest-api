@@ -5,25 +5,26 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-   <link rel="stylesheet" href="/css/login.css" />
+   <link rel="stylesheet" href="/css/forget.css" />
    <title>Cookify</title>
 </head>
 
 <body>
    <section class="sign__in animate__animated animate__fadeIn">
       <img src="/images/login.jpg" alt="">
-      <form class="form" action="/auth/login" method="POST">
-         <h2>Login</h2>
+      <form class="form" action="/auth/forget" method="POST">
+         <h2>Enter your email</h2>
          <div class="alert">
             <% if (error_msg.length > 0) { %>
                  <%= error_msg %>
            <% } %>
+           <% if (succes_msg.length > 0) { %>
+                <span class="success"><%= succes_msg %></span>
+            <% } %>
          </div>
          <input type="email" name="email" id="email" placeholder="Email">
-         <input type="password" name="password" id="password" placeholder="Password">
-         <a class="forgot" href="http://localhost:3000/forget">Forgot your password?</a>
-         <button type="submit">Login</button>
-         <a class="accont" href="http://localhost:3000/register">Don't have an account?</a>
+         <button type="submit">Send</button>
+         <a class="accont" href="http://localhost:3000/login">Already have an account?</a>
       </form>
    </section>
 </body>

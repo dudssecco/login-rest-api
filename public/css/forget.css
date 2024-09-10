@@ -1,0 +1,13 @@
+@import url(login.css);
+
+.alert{
+  height: 100%;
+  text-align: center;
+}
+
+.alert .success{
+    color: rgb(48, 150, 65);
+    font-size: 1rem;
+    font-family: 'Figtree';
+    font-weight: normal;
+}

@@ -1,0 +1,9 @@
+@import url(./index.css);
+
+p{
+    font-weight: bold;
+}
+
+a{
+    width: 200px;
+}
