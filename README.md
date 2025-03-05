@@ -32,4 +32,4 @@ npm install
 npm run start
 ```
 
-6 Enjoy your API running locally
+6. Enjoy your API running locally
